@@ -7,11 +7,12 @@ def divisor(n):
     for ld in range(2, n // 2):
         if n % ld == 0:
             largest_divisor = ld
-    return largest_divisor
+            break
+    return n // largest_divisor
 
 
 def minOperations(n):
     i = divisor(n)
     if i == n:
         return n
-    return i + int(n / i)
+    return i + int(n / i)  - 1
