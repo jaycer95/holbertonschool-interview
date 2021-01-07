@@ -4,9 +4,9 @@
 
 def divisor(n):
     largest_divisor = n
-    for l in range(2, n):
-        if n % l == 0:
-            largest_divisor = l
+    for ld in range(2, n // 2):
+        if n % ld == 0:
+            largest_divisor = ld
     return largest_divisor
 
 
@@ -14,5 +14,4 @@ def minOperations(n):
     i = divisor(n)
     if i == n:
         return n
-    m = minOperations(i)
-    return m + int(n / i)
+    return i + int(n / i)
