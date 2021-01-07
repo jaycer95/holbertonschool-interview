@@ -2,17 +2,18 @@
 """ Minimum Operations """
 
 
-def divisor(n):
-    largest_divisor = n
-    for ld in range(2, n // 2):
-        if n % ld == 0:
-            largest_divisor = ld
-            break
-    return n // largest_divisor
-
-
 def minOperations(n):
-    i = divisor(n)
-    if i == n:
-        return n
-    return i + int(n / i)  - 1
+    res = []
+    d = 2
+    while n %d == 0:
+        res.append(d)
+        q = n // d
+        n = q
+    d = 3
+    while d <= n:
+        while n%d == 0:
+            res.append(d)
+            q = n // d
+            n = q
+        d = d + 2
+    return sum(res)
