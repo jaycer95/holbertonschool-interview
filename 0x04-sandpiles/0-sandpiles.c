@@ -43,7 +43,13 @@ void sum(int a[3][3], int b[3][3])
 }
 void stable(int a[3][3], int tmp[3][3])
 {
-    tmp = a;
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+        tmp[i][j] = a[i][j];
+        }
+    }
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -51,6 +57,7 @@ void stable(int a[3][3], int tmp[3][3])
 
             if (tmp[i][j] >= 4)
             {
+                a[i][j] = a[i][j] - 4;
                 if (i >= 1)
                 {
                     a[i - 1][j] += 1;
@@ -67,16 +74,15 @@ void stable(int a[3][3], int tmp[3][3])
                 {
                     a[i][j + 1] += 1;
                 }
-                a[i][j] = a[i][j] - 4;
-                }
             }
         }
+    }
 }
 
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
     int tmp[3][3];
-    
+
     sum(grid1, grid2);
     while (!verification(grid1))
     {
