@@ -6,9 +6,11 @@
 **/
 bool verification(int a[3][3])
 {
-for (int i = 0; i < 3; i++)
+int i;
+int j;
+for (i = 0; i < 3; i++)
 {
-for (int j = 0; j < 3; j++)
+for (j = 0; j < 3; j++)
 {
 if (a[i][j] > 3)
 {
@@ -25,10 +27,12 @@ return (true);
 **/
 void print(int a[3][3])
 {
+int i;
+int j;
 printf("=\n");
-for (int i = 0; i < 3; i++)
+for (i = 0; i < 3; i++)
 {
-for (int j = 0; j < 3; j++)
+for (j = 0; j < 3; j++)
 {
 printf("%d", a[i][j]);
 if (j < 2)
@@ -47,9 +51,11 @@ printf("\n");
 **/
 void sum(int a[3][3], int b[3][3])
 {
-for (int i = 0; i < 3; i++)
+int i;
+int j;
+for (i = 0; i < 3; i++)
 {
-for (int j = 0; j < 3; j++)
+for (j = 0; j < 3; j++)
 {
 a[i][j] += b[i][j];
 }
@@ -63,16 +69,18 @@ a[i][j] += b[i][j];
 **/
 void stable(int a[3][3], int tmp[3][3])
 {
-for (int i = 0; i < 3; i++)
+int i;
+int j;
+for (i = 0; i < 3; i++)
 {
-for (int j = 0; j < 3; j++)
+for (j = 0; j < 3; j++)
 {
 tmp[i][j] = a[i][j];
 }
 }
-for (int i = 0; i < 3; i++)
+for (i = 0; i < 3; i++)
 {
-for (int j = 0; j < 3; j++)
+for (j = 0; j < 3; j++)
 {
 if (tmp[i][j] >= 4)
 {
