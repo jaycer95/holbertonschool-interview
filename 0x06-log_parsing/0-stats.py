@@ -21,10 +21,11 @@ try:
         else:
             p += 1
         split = line.split()
-        fsize += int(split[-1])
-        for key, value in status.items():
-            if split[-2] == key:
-                status[key] = status[key] + 1
+        if len(split) > 2:
+            fsize += int(split[-1])
+            for key, value in status.items():
+                if split[-2] == key:
+                    status[key] = status[key] + 1
 except KeyboardInterrupt:
     pass
 finally:
