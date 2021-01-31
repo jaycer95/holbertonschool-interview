@@ -12,6 +12,7 @@ p = 0
 fsize = 0
 try:
     for line in sys.stdin:
+        p += 1
         split = line.split()
         fsize += int(split[-1])
         for key, value in status.items():
