@@ -19,10 +19,16 @@ try:
                     print("{}: {}".format(key, value))
         p += 1
         split = line.split()
-        fsize += int(split[-1])
-        for key, value in status.items():
-            if split[-2] == key:
-                status[key] = status[key] + 1
+        try:
+            fsize += int(split[-1])
+        except Exception as e:
+            pass
+        try:
+            for key, value in status.items():
+                if split[-2] == key:
+                    status[key] = status[key] + 1
+        except Exception as e:
+            pass
     print("File size: {}".format(fsize))
     for key, value in sorted(status.items()):
         if value != 0:
