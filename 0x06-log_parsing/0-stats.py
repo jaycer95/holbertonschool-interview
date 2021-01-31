@@ -12,30 +12,27 @@ p = 1
 fsize = 0
 try:
     for line in sys.stdin:
-        while p < 10:
+        if p == 10:
+            print("File size: {}".format(fsize))
+            for key, value in sorted(status.items()):
+                if value != 0:
+                    print("{}: {}".format(key, value))
+            p = 1
+        else:
             p += 1
-        print("File size: {}".format(fsize))
-        for key, value in sorted(status.items()):
-            if value != 0:
-                print("{}: {}".format(key, value))
-        p = 1
         split = line.split()
-        try:
-            fsize += int(split[-1])
-        except Exception as e:
-            pass
-        try:
-            for key, value in status.items():
-                if key == split[-2]:
+        fsize += int(split[-1])
+        for key, value in status.items():
+                if split[-2] == key:
                     status[key] = status[key] + 1
-        except Exception as e:
-            pass
     print("File size: {}".format(fsize))
     for key, value in sorted(status.items()):
         if value != 0:
             print("{}: {}".format(key, value))
 
-except KeyboardInterrupt as e:
+except KeyboardInterrupt:
+    pass
+finally:
     print("File size: {}".format(fsize))
     for key, value in sorted(status.items()):
         if value != 0:
