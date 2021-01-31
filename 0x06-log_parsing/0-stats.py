@@ -12,12 +12,12 @@ p = 0
 fsize = 0
 try:
     for line in sys.stdin:
+        p += 1
         if p % 10 == 0:
             print("File size: {}".format(fsize))
             for key, value in sorted(status.items()):
                 if value != 0:
                     print("{}: {}".format(key, value))
-        p += 1
         split = line.split()
         try:
             fsize += int(split[-1])
