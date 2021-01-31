@@ -14,11 +14,10 @@ try:
     for line in sys.stdin:
         while p < 10:
             p += 1
-        if p == 10:
-            print("File size: {}".format(fsize))
-            for key, value in sorted(status.items()):
-                if value != 0:
-                    print("{}: {}".format(key, value))
+        print("File size: {}".format(fsize))
+        for key, value in sorted(status.items()):
+            if value != 0:
+                print("{}: {}".format(key, value))
         p = 1
         split = line.split()
         try:
@@ -31,10 +30,10 @@ try:
                     status[key] = status[key] + 1
         except Exception as e:
             pass
-        print("File size: {}".format(fsize))
-        for key, value in sorted(status.items()):
-            if value != 0:
-                print("{}: {}".format(key, value))
+    print("File size: {}".format(fsize))
+    for key, value in sorted(status.items()):
+        if value != 0:
+            print("{}: {}".format(key, value))
 
 except KeyboardInterrupt as e:
     print("File size: {}".format(fsize))
