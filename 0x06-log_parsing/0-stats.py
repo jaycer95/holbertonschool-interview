@@ -25,8 +25,6 @@ try:
                     print("{}: {}".format(key, value))
 
 except KeyboardInterrupt:
-    pass
-finally:
     print("File size: {}".format(fsize))
     for key, value in sorted(status.items()):
         if value != 0:
