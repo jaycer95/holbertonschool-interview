@@ -14,11 +14,10 @@ try:
     for line in sys.stdin:
         p += 1
         split = line.split()
-        if len(split > 2):
-            fsize += int(split[-1])
-            for key, value in status.items():
-                    if split[-2] == key:
-                        status[key] = status[key] + 1
+        fsize += int(split[-1])
+        for key, value in status.items():
+            if split[-2] == key:
+                status[key] = status[key] + 1
         if p % 10 == 0:
             print("File size: {}".format(fsize))
             for key, value in sorted(status.items()):
