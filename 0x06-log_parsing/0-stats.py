@@ -17,12 +17,12 @@ try:
         for key, value in status.items():
             if split[-2] == key:
                 status[key] = status[key] + 1
+        p += 1
         if p % 10 == 0:
             print("File size: {}".format(fsize))
             for key, value in sorted(status.items()):
                 if value != 0:
                     print("{}: {}".format(key, value))
-        p += 1
 except KeyboardInterrupt:
     pass
 finally:
