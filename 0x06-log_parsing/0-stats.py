@@ -25,7 +25,6 @@ try:
         for key, value in status.items():
             if split[-2] == key:
                 status[key] = status[key] + 1
-        p += 1
 except KeyboardInterrupt:
     pass
 finally:
