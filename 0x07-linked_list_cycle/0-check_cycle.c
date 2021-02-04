@@ -7,15 +7,16 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *p = list, *q = list;
-	if (!list)
-		return (0);
-	while(q && q->next)
-	{
-		p = p->next;
-		q = q->next->next;
-		if (p == q)
-			return (1);
-	}
-	return (0);
+listint_t *p = list, *q = list;
+
+if (!list)
+return (0);
+while (q && q->next)
+{
+p = p->next;
+q = q->next->next;
+if (p == q)
+return (1);
+}
+return (0);
 }
