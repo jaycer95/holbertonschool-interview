@@ -11,7 +11,7 @@ int tmp = n;
 int rest;
 while (n != 0)
 {
-rest = tmp % 10;
+rest = n % 10;
 rev = rev * 10 + rest;
 n /= 10;
 }
