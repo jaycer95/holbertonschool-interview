@@ -8,9 +8,11 @@ int is_palindrome(unsigned long n)
 {
 unsigned int rev = 0;
 int tmp = n;
+int rest;
 while (tmp != 0)
 {
-rev = rev * 10 + tmp % 10;
+rest = tmp % 10;
+rev = rev * 10 + rest;
 tmp /= 10;
 }
 if (n == rev)
