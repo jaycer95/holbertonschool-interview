@@ -9,13 +9,13 @@ int is_palindrome(unsigned long n)
 unsigned int rev = 0;
 int tmp = n;
 int rest;
-while (tmp != 0)
+while (n != 0)
 {
 rest = tmp % 10;
 rev = rev * 10 + rest;
-tmp /= 10;
+n /= 10;
 }
-if (n == rev)
+if (tmp == rev)
 return (1);
 return (0);
 }
