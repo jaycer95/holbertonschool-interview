@@ -7,7 +7,7 @@ def validUTF8(data):
     m = data
     try:
         for b in m:
-            b &= 255
+            b = b & 255
         bytes(m).decode("UTF-8")
         return True
     except Exception:
