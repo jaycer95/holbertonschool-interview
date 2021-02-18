@@ -2,7 +2,6 @@
 """ Utf8 Validator """
 
 
-
 def validUTF8(data):
     """ check if valid utf8 format """
     try:
