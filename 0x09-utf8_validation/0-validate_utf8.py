@@ -5,8 +5,9 @@
 def validUTF8(data):
     """ check if valid utf8 format """
     try:
-        ch = [n & 255 for n in data]
-        bytes(ch).decode("UTF-8")
+        for n in data:
+            n &= 255
+        bytes(data).decode("UTF-8")
         return True
     except Exception:
         return False
