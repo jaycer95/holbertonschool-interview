@@ -6,6 +6,8 @@ def validUTF8(data):
     """ check if valid utf8 format """
     m = data
     try:
+        for b in m:
+            b &= 255
         bytes(m).decode("UTF-8")
         return True
     except Exception:
