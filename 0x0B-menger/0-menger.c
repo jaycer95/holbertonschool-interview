@@ -4,7 +4,8 @@
 * @level: level
 * Return: void
 **/
-void menger(int level){
+void menger(int level)
+{
 int size = pow(3, level);
 int i, j, k, m;
 char diez;
@@ -14,7 +15,7 @@ for (j = 0; j < size; j++)
 {
 diez = '#';
 k = i;
-for(m = j; m; m /= 3)
+for (m = j; m; m /= 3)
 {
 if (k % 3 == 1 && m % 3 == 1)
 diez = ' ';
