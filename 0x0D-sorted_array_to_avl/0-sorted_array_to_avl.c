@@ -8,18 +8,18 @@
 */
 avl_t *new_node(avl_t *parent, int value)
 {
-    avl_t *node;
+avl_t *node;
 
-    node = malloc(sizeof(avl_t));
-    if (node == NULL)
-        return (NULL);
+node = malloc(sizeof(avl_t));
+if (node == NULL)
+return (NULL);
 
-    node->parent = parent;
-    node->right = NULL;
-    node->left = NULL;
-    node->n = value;
+node->parent = parent;
+node->right = NULL;
+node->left = NULL;
+node->n = value;
 
-    return (node);
+return (node);
 }
 
 /**
@@ -32,20 +32,20 @@ avl_t *new_node(avl_t *parent, int value)
  */
 avl_t *create_AVL(int *array, int start, int end, avl_t *parent)
 {
-    avl_t *tmp;
-    int mid;
+avl_t *tmp;
+int mid;
 
-    if (start > end)
-        return (NULL);
-    mid = (start + end) / 2;
-    tmp = new_node(parent, array[mid]);
+if (start > end)
+return (NULL);
+mid = (start + end) / 2;
+tmp = new_node(parent, array[mid]);
 
-    if (tmp == NULL)
-        return (NULL);
-    tmp->left = create_AVL(array, start, mid - 1, tmp);
-    tmp->right = create_AVL(array, mid + 1, end, tmp);
+if (tmp == NULL)
+return (NULL);
+tmp->left = create_AVL(array, start, mid - 1, tmp);
+tmp->right = create_AVL(array, mid + 1, end, tmp);
 
-    return (tmp);
+return (tmp);
 }
 
 /**
@@ -59,8 +59,8 @@ avl_t *create_AVL(int *array, int start, int end, avl_t *parent)
 
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-    
-    if (!array || size < 1)
-        return (NULL);
-    return (create_AVL(array, 0, (size - 1), NULL));
+
+if (!array || size < 1)
+return (NULL);
+return (create_AVL(array, 0, (size - 1), NULL));
 }
