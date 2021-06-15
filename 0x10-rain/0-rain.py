@@ -3,7 +3,8 @@
 
 
 def rain(walls):
-    """ calculate how many square units of water will be retained after it rains"""
+    """ calculate how many square units of
+    water will be retained after it rains"""
     count = 0
     for i in range(1, len(walls) - 1):
         right = walls[i]
