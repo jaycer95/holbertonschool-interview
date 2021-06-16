@@ -12,14 +12,18 @@ def count_words(subreddit, word_list, count_dict={}, after=""):
     if after is None:
         word_list = [[key, value] for key, value in count_dict.items()]
         word_list = sorted(word_list, key=lambda x: (-x[1], x[0]))
-        for k  in word_list:
+        for k in word_list:
             if k[1]:
                 print("{}: {}".format(k[0].lower(), k[1]))
         return None
     url = "https://api.reddit.com/r/{}/hot".format(subreddit)
     params = {'limit': 100, 'after': after}
     headers = {'user-agent': 'my-app/0.0.1'}
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    response = requests.get(
+        url,
+        headers=headers,
+        params=params,
+        allow_redirects=False)
 
     if response.status_code == 200:
         after = response.json().get("data").get("after")
