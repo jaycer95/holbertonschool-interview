@@ -90,7 +90,7 @@ int heap_extract(heap_t **root)
 	if (!root || !*root)
 		return (0);
 	n = (*root)->n;
-	size = get_height(*root);
+	size = height(*root);
 	tree = *root;
 
 	if (!tree->left && !tree->right)
