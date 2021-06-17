@@ -79,6 +79,28 @@ int main(int argc, char *argv[])
 		ans[i] = ans[i] % 10;
 		ans[i + 1] = ans[i + 1] + tmp;
 		}
+	results(z1, z2, len, ans);
+	free(a);
+	free(b);
+	free(ans);
+	return (0);
+}
+
+/**
+ * results - print results
+ *
+ * @z1: 0 if #1 is 0
+ * @z2: 0 if #2 is 0
+ * @len: lenght of answer
+ * @ans: Pointer to answer
+ *
+ * Return: longitud of string
+ */
+
+void results(int z1, int z2, int len, int *ans)
+{
+	int i;
+
 	if (z1 == 0 || z2 == 0)
 		_putchar('0');
 	else
@@ -88,8 +110,4 @@ int main(int argc, char *argv[])
 				_putchar(ans[i] + '0');
 	}
 	_putchar('\n');
-	free(a);
-	free(b);
-	free(ans);
-	return (0);
 }
