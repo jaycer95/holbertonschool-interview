@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ Making Change """
-import numpy as np
 
 
 def makeChange(coins, total):
@@ -9,14 +8,14 @@ def makeChange(coins, total):
         return 0
     num = 0
     r = total
-    sorted_coins = np.sort(np.array(coins))
-    while sorted_coins != [] and r > 0:
+    coins.sort()
+    while coins != [] and r > 0:
         try:
-            if r / sorted_coins[-1] >= 1:
-                num += r // sorted_coins[-1]
-                r = r % sorted_coins[-1]
+            if r / coins[-1] >= 1:
+                num += r // coins[-1]
+                r = r % coins[-1]
             else:
-                sorted_coins = sorted_coins[:-1]
+                coins.pop()
         except Exception:
             return -1
     if r != 0:
