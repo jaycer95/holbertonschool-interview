@@ -10,7 +10,7 @@ def makeChange(coins, total):
     num = 0
     r = total
     sorted_coins = np.sort(np.array(coins))
-    while sorted_coins != []:
+    while sorted_coins != [] and r > 0:
         if r < sorted_coins.all():
             return -1
         num += r // sorted_coins[-1]
